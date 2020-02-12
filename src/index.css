@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+}
+
+.navBar{
+  color: white;
+  background-color: black;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0px 0px 10px 2px gray;
+}
+
+.navBar h1{
+  font-size: 2rem;
+}
+
+.counter{
+  font-size: 3rem;
+  color: darkslategray;
+  text-shadow: 0px 0px 10px skyblue;
+}
+
+button{
+  width: 250px;
+  margin-bottom: 3vh;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+}

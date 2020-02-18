@@ -4,7 +4,8 @@ class Counter extends Component {
   constructor() {
     super();
     this.state = {
-      count: 0
+      count: 0,
+      doubleNum: false
     };
   }
 
@@ -12,23 +13,41 @@ class Counter extends Component {
 
   increment = () => {
     if (this.state.count < 20) {
-      this.setState({
-        count: this.state.count + 1
-      });
+      if (this.state.doubleNum && this.state.count<19) {
+        this.setState({
+          count: this.state.count + 2
+        });
+      } else {
+        this.setState({
+          count: this.state.count + 1
+        });
+      }
     }
   };
 
   decrement = () => {
     if (this.state.count > 0) {
-      this.setState({
-        count: this.state.count - 1
-      });
+      if (this.state.doubleNum && this.state.count>1) {
+        this.setState({
+          count: this.state.count - 2
+        });
+      } else {
+        this.setState({
+          count: this.state.count - 1
+        });
+      }
     }
   };
 
   clear = () => {
     this.setState({
       count: 0
+    });
+  };
+
+  doubleCount = () => {
+    this.setState({
+      doubleNum: !this.state.doubleNum
     });
   };
 
@@ -51,6 +70,9 @@ class Counter extends Component {
         </button>
         <button type="button" onClick={this.clear}>
           Clear
+        </button>
+        <button type="button" onClick={this.doubleCount}>
+          {this.state.doubleNum ? "+2 (Double Count)" : "+1 (Single Count)"}
         </button>
       </section>
     );
